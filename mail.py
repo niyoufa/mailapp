@@ -135,12 +135,21 @@ class _SMTPSession(object):
 
         self.deadline = datetime.now() + timedelta(seconds=self.duration * 60)
 
-smtp = {"host": "smtp.exmail.qq.com",
-        "user": "admin@dhui100.com",
-        "password": "You1234567",
-        "duration": 30,
-        "tls": True
-        }
+# smtp = {"host": "smtp.exmail.qq.com",
+#         "user": "admin@dhui100.com",
+#         "password": "You1234567",
+#         "duration": 30,
+#         "tls": True
+#         }
+
+smtp = {
+    "host": "mail.dhjt.com",
+    # "host": "192.168.1.98",
+    "user": "nj.niyoufa@dhjt.com",
+    "password": "19922011nyf",
+    "duration": 30,
+    "tls": True
+}
 
 def _get_session():
     global _session
@@ -157,6 +166,6 @@ _session = None
 
 if __name__ == "__main__":
 
-    send_email('admin@dhui100.com', ["1061794187@qq.com"], "测试excel文件邮件发送", '',
+    send_email('nj.niyoufa@dhjt.com', ["nj.heshan@dhjt.com"], "测试excel文件邮件发送", '',
            html=u'<p>%s</p><p>日期：%s - %s</p>' % (u"测试excel文件邮件发送", u"2015", u"2016"),
            attachments=[{"filename": u"测试excel文件邮件发送.xls", "data": u"/home/dhui100/倪有发——工作日报.xls"}])
